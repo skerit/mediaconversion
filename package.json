@@ -1,0 +1,14 @@
+{
+	"name": "mediaconversion",
+	"description": "Convert videos",
+	"version": "0.1.0",
+	"author": "Jelle De Loecker <jelle@develry.be>",
+	"keywords": ["ffmpeg", "video"],
+	"main": "lib/media_conversion.js",
+	"repository": "git@github.com:skerit/mediaconversion.git",
+	"dependencies": {
+		"protoblast": "~0.1.12",
+		"mkdirp": "~0.5.1"
+	},
+	"license": "MIT"
+}
