@@ -1,7 +1,7 @@
 {
 	"name": "mediaconversion",
 	"description": "Convert videos",
-	"version": "0.1.0",
+	"version": "0.1.1-alpha",
 	"author": "Jelle De Loecker <jelle@develry.be>",
 	"keywords": ["ffmpeg", "video"],
 	"main": "lib/media_conversion.js",
@@ -10,5 +10,6 @@
 		"protoblast": "~0.3.2",
 		"mkdirp": "~0.5.1"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"private": true
 }
