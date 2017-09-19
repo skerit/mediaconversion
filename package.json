@@ -7,8 +7,8 @@
 	"main": "lib/media_conversion.js",
 	"repository": "git@github.com:skerit/mediaconversion.git",
 	"dependencies": {
-		"protoblast": "~0.3.2",
-		"mkdirp": "~0.5.1"
+		"protoblast" : "~0.4.0",
+		"mkdirp"     : "~0.5.1"
 	},
 	"license": "MIT",
 	"private": true
