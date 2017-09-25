@@ -5,25 +5,24 @@ Convert videos using ffmpeg
 # Grabbing raw v4l stream
 
 ```javascript
-var options,
-    output,
-    conv;
-
-options = {
-    input_type : 'video4linux2',
-    profile    : 'copy'
-};
+var MC = require('mediaconversion');
 
 // Create the conversion instance
-conv = new MediaConversion();
+let conv = new MC.MediaConversion();
 
 // Set the correct input path
-conv.setInput('/dev/some/video/device');
+let input = conv.addInput('/dev/some/video/device');
+
+// Set the input type
+input.setVideoCodec('video4linux');
 
 // Create a passthrough output stream
-output = conv.createStream();
+let output = conv.addOutput();
+
+// Enable the copy profile
+output.useProfile('copy');
 
 // Start the "conversion"
-conv.start(output, options);
+conv.start();
 ```
 
