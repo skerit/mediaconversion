@@ -1,7 +1,8 @@
-## 0.1.1 (WIP)
+## 0.2.0 (WIP)
 
+* Complete rewrite
 * Add jsmpeg profile
-* Set default property values on the prototype
+* Begin adding support for multiple inputs and outputs
 
 ## 0.1.0 (2016-10-19)
 

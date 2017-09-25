@@ -20,5 +20,6 @@ v8.log
 # Ignore test files
 scratch*
 
-# Ignore ffm video files
-*.ffm
+# The samples and test folder shouldn't go on npm
+samples/*
+test/*

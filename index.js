@@ -1,1 +1,1 @@
-module.exports = require('./lib/media_conversion.js');
+module.exports = require('./lib/init.js');

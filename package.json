@@ -1,14 +1,20 @@
 {
 	"name": "mediaconversion",
 	"description": "Convert videos",
-	"version": "0.1.1-alpha",
+	"version": "0.2.0-alpha",
 	"author": "Jelle De Loecker <jelle@develry.be>",
 	"keywords": ["ffmpeg", "video"],
-	"main": "lib/media_conversion.js",
+	"main": "lib/init.js",
 	"repository": "git@github.com:skerit/mediaconversion.git",
 	"dependencies": {
 		"protoblast" : "~0.4.0",
 		"mkdirp"     : "~0.5.1"
+	},
+	"devDependencies": {
+		"mocha"      : "1.20.x"
+	},
+	"scripts": {
+		"test": "node_modules/.bin/mocha --reporter spec"
 	},
 	"license": "MIT",
 	"private": true
