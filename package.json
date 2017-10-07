@@ -14,7 +14,8 @@
 		"mocha"      : "1.20.x"
 	},
 	"scripts": {
-		"test": "node_modules/.bin/mocha --reporter spec"
+		"test": "node_modules/.bin/mocha --reporter spec",
+		"test-cov": "istanbul cover _mocha"
 	},
 	"license": "MIT",
 	"private": true

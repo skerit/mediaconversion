@@ -22,3 +22,7 @@ scratch*
 
 # Ignore ffm video files
 *.ffm
+
+# Ignore coverage results
+/coverage/
+.coveralls.yml
