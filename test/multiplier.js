@@ -8,6 +8,7 @@ if (!global.MC) {
 
 describe('Input stream multiplier/forker', function() {
 	this.slow(1000);
+	this.timeout(0);
 
 	it('should multiply the incoming source to determine its codec', function(done) {
 		var conv = new MC.MediaConversion({debug: false}),

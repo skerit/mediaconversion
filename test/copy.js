@@ -7,6 +7,7 @@ if (!global.MC) {
 
 describe('Converting files with equal input codec', function() {
 	this.slow(1000);
+	this.timeout(0);
 
 	it('should copy the source if it is the same codec', function(done) {
 		var conv = new MC.MediaConversion({debug: false}),
@@ -213,7 +214,7 @@ describe('Converting files with equal input codec', function() {
 
 			// Since we don't do any encoding, the size should be about the same
 			// (Save for transport tream format changes)
-			assert.equal(retotal > 2069000 && retotal < 3269000, true, 'The output stream was not the right size');
+			assert.equal(retotal > 2069000 && retotal < 3269000, true, 'The output stream was not the right size: ' + retotal + ' bytes. It has probably been reencoded.');
 
 			doDone('reconv-end');
 		});

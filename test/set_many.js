@@ -8,6 +8,7 @@ if (!global.MC) {
 
 describe('Setting many options', function() {
 	this.slow(1000);
+	this.timeout(0);
 
 	it('should be set on the input and output', function(done) {
 		var conv = new MC.MediaConversion({debug: false}),
