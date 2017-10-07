@@ -112,7 +112,7 @@ describe('Raw output/input', function() {
 
 		soutput.on('end', function onEnd() {
 			assert.equal(stotal < raw_total, true, 'JSmpeg output was not smaller than the raw output');
-			assert.equal(stotal > 3200000, true, 'JSmpeg output was too small');
+			assert.equal(stotal > 1400000, true, 'JSmpeg output was too small: ' + stotal + ' bytes');
 			done();
 		});
 
