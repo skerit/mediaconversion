@@ -6,7 +6,7 @@ if (!global.MC) {
 }
 
 describe('Converting files with equal input codec', function() {
-	this.slow(1000);
+	this.slow(1600);
 	this.timeout(0);
 
 	it('should copy the source if it is the same codec', function(done) {
@@ -220,5 +220,71 @@ describe('Converting files with equal input codec', function() {
 		});
 
 		reconv.start();
+	});
+
+	it('should disable copy when different output pixel format is set', function noCopyWhenPixFmt(done) {
+
+		var conv = new MC.MediaConversion({debug: false});
+
+		let input = conv.addInput(libpath.resolve(__dirname, '..', 'samples', 'CEP389_512kb.mp4'));
+		let output = conv.getRawFramesOutput();
+
+		let total = 0;
+
+		let second = new MC.MediaConversion({debug: false});
+
+		let sinput = second.addInput(output);
+		let soutput = second.getRawFramesOutput('gray');
+
+		soutput.on('data', function onData(c) {
+			total += c.length;
+		});
+
+		// output result  : 236481120
+		// soutput result : 78827040
+
+		soutput.resume();
+
+		soutput.on('end', function onEnd() {
+			assert.equal(total, 78827040, 'Second output was not reencoded, byte size was ' + total);
+			done();
+		});
+
+		conv.start();
+		second.start();
+	});
+
+	it('should disable copy when filters are used', function noCopyWhenFiltering(done) {
+		this.slow(2500);
+
+		var conv = new MC.MediaConversion({debug: false});
+
+		let input = conv.addInput(libpath.resolve(__dirname, '..', 'samples', 'CEP389_512kb.mp4'));
+		let output = conv.getRawFramesOutput();
+
+		let total = 0;
+
+		let second = new MC.MediaConversion({debug: false});
+
+		let sinput = second.addInput(output);
+		let soutput = second.getRawFramesOutput('gray');
+		soutput.setFilter('boxblur', '2:1');
+
+		soutput.on('data', function onData(c) {
+			total += c.length;
+		});
+
+		// output result  : 236481120
+		// soutput result : 78827040
+
+		soutput.resume();
+
+		soutput.on('end', function onEnd() {
+			assert.equal(total, 78827040, 'Second output was not reencoded, byte size was ' + total);
+			done();
+		});
+
+		conv.start();
+		second.start();
 	});
 });
