@@ -20,6 +20,13 @@ v8.log
 # Ignore test files
 scratch*
 
+# Ignore ffm video files
+*.ffm
+
+# Ignore coverage results
+/coverage/
+.coveralls.yml
+
 # The samples and test folder shouldn't go on npm
 samples/*
 test/*
