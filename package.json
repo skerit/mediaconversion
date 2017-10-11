@@ -1,7 +1,7 @@
 {
 	"name": "mediaconversion",
 	"description": "Convert videos",
-	"version": "0.2.0-alpha",
+	"version": "1.0.0-alpha",
 	"author": "Jelle De Loecker <jelle@develry.be>",
 	"keywords": ["ffmpeg", "video"],
 	"main": "lib/init.js",
@@ -11,11 +11,14 @@
 		"mkdirp"     : "~0.5.1"
 	},
 	"devDependencies": {
+		"coveralls"  : "^2.11.6",
+		"istanbul"   : "^0.4.5",
 		"mocha"      : "1.20.x"
 	},
 	"scripts": {
-		"test": "node_modules/.bin/mocha --reporter spec",
-		"test-cov": "istanbul cover _mocha"
+		"test"            : "node_modules/.bin/mocha --reporter spec",
+		"coverage"        : "./node_modules/istanbul/lib/cli.js cover _mocha",
+		"report-coverage" : "cat ./coverage/lcov.info | coveralls"
 	},
 	"license": "MIT",
 	"private": true

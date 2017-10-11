@@ -1,4 +1,4 @@
-## 0.2.0 (WIP)
+## 1.0.0 (WIP)
 
 * Complete rewrite
 * Add jsmpeg profile
