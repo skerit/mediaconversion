@@ -1,5 +1,9 @@
 # mediaconversion
 
+[![NPM version](http://img.shields.io/npm/v/mediaconversion.svg)](https://npmjs.org/package/mediaconversion) 
+[![Build Status](https://travis-ci.org/skerit/mediaconversion.svg?branch=master)](https://travis-ci.org/skerit/mediaconversion)
+[![Coverage Status](https://coveralls.io/repos/github/skerit/mediaconversion/badge.svg?branch=master)](https://coveralls.io/github/skerit/mediaconversion?branch=master)
+
 Convert videos using ffmpeg
 
 # Grabbing raw v4l stream
