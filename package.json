@@ -8,7 +8,7 @@
 	"repository": "git@github.com:skerit/mediaconversion.git",
 	"dependencies": {
 		"protoblast" : "~0.4.0",
-		"mkdirp"     : "~0.5.1"
+		"mkdirp"     : "~1.0.0"
 	},
 	"devDependencies": {
 		"coveralls"  : "^2.11.6",
